@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Inter;
+    src: url(../fonts/inter/Inter_28pt-Regular.ttf);
+  }
+  h1
+  {
+    align-self: stretch;
+    color: #fff;
+    font-family: Inter;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+
+  }
