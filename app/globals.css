@@ -31,7 +31,6 @@ body {
   color: var(--text);
   background-color: var(--background);
   scroll-behavior: smooth;
-  font-family: inter;
 }
 
 body {

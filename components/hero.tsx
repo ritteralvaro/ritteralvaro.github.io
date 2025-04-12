@@ -32,7 +32,7 @@ export default function Hero() {
           <div className={styles.imageContainer}>
             <div className={styles.imageBorder}></div>
             <Image
-              src="/placeholder.svg?height=800&width=600"
+              src="/alvaro.jpg"
               alt="Alvaro Ritter"
               width={600}
               height={800}
