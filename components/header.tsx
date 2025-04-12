@@ -25,11 +25,9 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <span className={styles.logoText}>
-            ritter<span className={styles.highlight}>alvaro</span>
-          </span>
-        </Link>
+      <Link href="/">
+        <img src="/logo_vertical.svg" alt="ritteralvaro logo" className={styles.logoImg} />
+      </Link>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
           <ul className={styles.navList}>

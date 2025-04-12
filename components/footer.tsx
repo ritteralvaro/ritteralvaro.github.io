@@ -12,9 +12,8 @@ export default function Footer() {
         <div className={styles.content}>
           <div className={styles.logo}>
             <Link href="/">
-              <span className={styles.logoText}>
-                ritter<span className={styles.highlight}>alvaro</span>
-              </span>
+              <img src="/logo.svg" className={styles.logoImg}>
+              </img>
             </Link>
           </div>
 
