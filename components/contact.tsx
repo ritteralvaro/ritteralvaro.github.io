@@ -14,30 +14,49 @@ export default function Contact() {
   const [submitMessage, setSubmitMessage] = useState("")
   const [submitStatus, setSubmitStatus] = useState("")
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { // <--- Adicione o tipo aqui
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => { // <--- Adicione o tipo aqui
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true)
 
-    // Simulate form submission
     try {
-      // Here you would normally send the data to your backend
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      // Preparando os dados para envio
+      const data = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: new Date().toISOString(),
+      }
+
+      // Enviar para nossa API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Falha no envio');
+      }
 
       setSubmitStatus("success")
       setSubmitMessage("Mensagem enviada com sucesso! Entrarei em contato em breve.")
       setFormData({ name: "", email: "", message: "" })
     } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
       setSubmitStatus("error")
       setSubmitMessage("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.")
     } finally {
       setIsSubmitting(false)
 
-      // Clear message after 5 seconds
+      // Limpa a mensagem após 5 segundos
       setTimeout(() => {
         setSubmitMessage("")
         setSubmitStatus("")
@@ -66,12 +85,8 @@ export default function Contact() {
                 <p>ritteralvaro@gmail.com</p>
               </div>
               <div className="contactItem">
-                <h4>Atendimento:</h4>
-                <p>atendimento@soucluster.com</p>
-              </div>
-              <div className="contactItem">
                 <h4>Telefone:</h4>
-                <p>+55 53 8150 1976</p>
+                <p>+55 53 98130-1976</p>
               </div>
             </div>
           </div>
