@@ -1,5 +1,4 @@
 import { Palette, LineChart, Lightbulb, Camera, Layers } from "lucide-react"
-import styles from "./services.module.css"
 
 export default function Services() {
   const services = [
@@ -36,26 +35,26 @@ export default function Services() {
   ]
 
   return (
-    <section id="servicos" className={`section ${styles.services}`}>
+    <section id="servicos" className="section services">
       <div className="container">
         <h2 className="section-title">SERVIÇOS</h2>
 
-        <div className={`${styles.intro} animate-in`}>
-          <h3 className={styles.introTitle}>
+        <div className="intro animate-in">
+          <h3 className="introTitle">
             Transformando <span className="highlight">ideias em resultados</span> com soluções criativas e estratégicas
           </h3>
-          <p className={styles.introText}>
+          <p className="introText">
             Ofereço um conjunto completo de serviços para ajudar sua marca a se destacar no mercado digital e físico,
             sempre com foco em performance e resultados mensuráveis.
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className="grid">
           {services.map((service, index) => (
-            <div key={index} className={`${styles.service} hover-glow animate-in animate-in-delay-${index + 1}`}>
-              <div className={styles.iconContainer}>{service.icon}</div>
-              <h3 className={styles.serviceTitle}>{service.title}</h3>
-              <p className={styles.serviceDescription}>{service.description}</p>
+            <div key={index} className={`service hover-glow animate-in animate-in-delay-${index + 1}`}>
+              <div className="iconContainer">{service.icon}</div>
+              <h3 className="serviceTitle">{service.title}</h3>
+              <p className="serviceDescription">{service.description}</p>
             </div>
           ))}
         </div>

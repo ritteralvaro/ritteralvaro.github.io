@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "Alvaro Ritter - Design, Marketing & Growth",
   description:
     "Designer com ampla experiência em soluções personalizadas para UX/UI, Growth Marketing e Design Gráfico",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -31,6 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-import './globals.css'

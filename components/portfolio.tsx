@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import styles from "./portfolio.module.css"
 
 // Portfolio data based on the current site
 const portfolioItems = [
@@ -84,29 +83,29 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <section id="projetos" className={`section ${styles.portfolio}`}>
-      <div className={styles.customCursor} ref={cursorRef}>
+    <section id="projetos" className="section portfolio">
+      <div className="customCursor" ref={cursorRef}>
         <span>Ver</span>
       </div>
 
       <div className="container">
         <h2 className="section-title">PROJETOS</h2>
 
-        <div className={`${styles.intro} animate-in`}>
-          <h3 className={styles.introTitle}>
+        <div className="intro animate-in">
+          <h3 className="introTitle">
             Trabalhos <span className="highlight">selecionados</span> com foco em resultados
           </h3>
-          <p className={styles.introText}>
+          <p className="introText">
             Conheça alguns dos projetos que desenvolvi para clientes de diferentes segmentos, sempre com o objetivo de
             criar soluções que geram impacto e resultados mensuráveis.
           </p>
         </div>
 
-        <div className={`${styles.filters} animate-in animate-in-delay-1`}>
+        <div className="filters animate-in animate-in-delay-1">
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`${styles.filterBtn} ${activeCategory === category.id ? styles.active : ""}`}
+              className={`filterBtn ${activeCategory === category.id ? "active" : ""}`}
               onClick={() => setActiveCategory(category.id)}
             >
               {category.name}
@@ -114,27 +113,27 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className={styles.grid}>
+        <div className="grid">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
-              className={`${styles.item} animate-in animate-in-delay-${(index % 3) + 2}`}
+              className={`item animate-in animate-in-delay-${(index % 3) + 2}`}
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
             >
-              <div className={styles.imageContainer}>
+              <div className="imageContainer">
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
                   width={600}
                   height={400}
-                  className={styles.image}
+                  className="image"
                 />
-                <div className={`${styles.overlay} ${hoveredItem === item.id ? styles.active : ""}`}>
-                  <div className={styles.overlayContent}>
+                <div className={`overlay ${hoveredItem === item.id ? "active" : ""}`}>
+                  <div className="overlayContent">
                     <h3>{item.title}</h3>
                     <p>{item.subtitle}</p>
-                    <Link href={`/projeto/${item.id}`} className={styles.viewBtn}>
+                    <Link href={`/projeto/${item.id}`} className="viewBtn">
                       Ver detalhes <ArrowRight size={16} />
                     </Link>
                   </div>
@@ -144,7 +143,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className={`${styles.cta} animate-in animate-in-delay-5`}>
+        <div className="cta animate-in animate-in-delay-5">
           <Link href="/projetos" className="btn btn-outline">
             Ver mais projetos
           </Link>

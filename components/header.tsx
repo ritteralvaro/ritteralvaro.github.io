@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
-import styles from "./header.module.css"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,14 +22,14 @@ export default function Header() {
   }, [])
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}>
-      <div className={styles.container}>
-      <Link href="/">
-        <img src="/logo_vertical.svg" alt="ritteralvaro logo" className={styles.logoImg} />
-      </Link>
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <div className="container">
+        <Link href="/" className="logo">
+          <img src="/logo_vertical.svg" width="150" height="40"></img>
+        </Link>
 
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ""}`}>
-          <ul className={styles.navList}>
+        <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
+          <ul className="navList">
             <li>
               <Link href="/#projetos" onClick={() => setIsMenuOpen(false)}>
                 Projetos
@@ -49,12 +48,12 @@ export default function Header() {
           </ul>
         </nav>
 
-        <Link href="/#contato" className={styles.contactBtn}>
-          Contato <span className={styles.contactIcon}>→</span>
+        <Link href="/#contato" className="contactBtn">
+          Contato <span className="contactIcon">→</span>
         </Link>
 
         <button
-          className={styles.menuButton}
+          className="menuButton"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
         >

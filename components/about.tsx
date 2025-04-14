@@ -1,31 +1,30 @@
 import Image from "next/image"
-import styles from "./about.module.css"
 
 export default function About() {
   return (
-    <section id="sobre" className={`section ${styles.about}`}>
-      <div className={styles.backgroundBlur}></div>
+    <section id="sobre" className="section about">
+      <div className="backgroundBlur"></div>
 
       <div className="container">
         <h2 className="section-title">SOBRE MIM</h2>
 
-        <div className={styles.content}>
-          <div className={`${styles.imageContainer} animate-in`}>
-            <div className={styles.imageBorder}></div>
+        <div className="content">
+          <div className="imageContainer animate-in">
+            <div className="imageBorder"></div>
             <Image
               src="/placeholder.svg?height=600&width=600"
               alt="Alvaro Ritter"
               width={500}
               height={500}
-              className={styles.image}
+              className="image"
             />
-            <div className={styles.imageGlow}></div>
+            <div className="imageGlow"></div>
           </div>
-          <div className={styles.text}>
-            <h3 className={`${styles.title} animate-in animate-in-delay-1`}>
+          <div className="text">
+            <h3 className="title animate-in animate-in-delay-1">
               Designer com foco em <span className="highlight">resultados concretos</span>
             </h3>
-            <div className={`${styles.description} animate-in animate-in-delay-2`}>
+            <div className="description animate-in animate-in-delay-2">
               <p>
                 Sou Alvaro Ritter, Designer Gráfico por formação, mas atuo em diversas frentes, como UX/UI Designer,
                 diretor de criação, growth hacker, designer de materiais gráficos e digitais, redator, além de gestor de
@@ -44,8 +43,8 @@ export default function About() {
               </p>
             </div>
 
-            <div className={`${styles.skills} animate-in animate-in-delay-3`}>
-              <div className={styles.skillCategory}>
+            <div className="skills animate-in animate-in-delay-3">
+              <div className="skillCategory">
                 <h4>Design</h4>
                 <ul>
                   <li>UI/UX Design</li>
@@ -54,7 +53,7 @@ export default function About() {
                   <li>Direção de Arte</li>
                 </ul>
               </div>
-              <div className={styles.skillCategory}>
+              <div className="skillCategory">
                 <h4>Marketing</h4>
                 <ul>
                   <li>Growth Hacking</li>
@@ -63,7 +62,7 @@ export default function About() {
                   <li>Branding</li>
                 </ul>
               </div>
-              <div className={styles.skillCategory}>
+              <div className="skillCategory">
                 <h4>Produção</h4>
                 <ul>
                   <li>Fotografia</li>

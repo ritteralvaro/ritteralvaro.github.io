@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, ChangeEvent, FormEvent } from "react"
 import { Send } from "lucide-react"
-import styles from "./contact.module.css"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,13 +14,13 @@ export default function Contact() {
   const [submitMessage, setSubmitMessage] = useState("")
   const [submitStatus, setSubmitStatus] = useState("")
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { // <--- Adicione o tipo aqui
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => { // <--- Adicione o tipo aqui
+    e.preventDefault();
     setIsSubmitting(true)
 
     // Simulate form submission
@@ -47,64 +46,49 @@ export default function Contact() {
   }
 
   return (
-    <section id="contato" className={`section ${styles.contact}`}>
-      <div className={styles.backgroundGlow}></div>
+    <section id="contato" className="section contact">
+      <div className="backgroundGlow"></div>
 
       <div className="container">
         <h2 className="section-title">CONTATO</h2>
 
-        <div className={styles.content}>
-          <div className={`${styles.info} animate-in`}>
-            <h3 className={styles.title}>Vamos trabalhar juntos?</h3>
-            <p className={styles.subtitle}>
+        <div className="content">
+          <div className="info animate-in">
+            <h3 className="title">Vamos trabalhar juntos?</h3>
+            <p className="subtitle">
               Entre em contato para conversarmos sobre seu projeto e como posso ajudar a transformar suas ideias em
               resultados concretos.
             </p>
 
-            <div className={styles.contactInfo}>
-              <div className={styles.contactItem}>
+            <div className="contactInfo">
+              <div className="contactItem">
                 <h4>Email:</h4>
                 <p>ritteralvaro@gmail.com</p>
               </div>
-              <div className={styles.contactItem}>
+              <div className="contactItem">
                 <h4>Atendimento:</h4>
                 <p>atendimento@soucluster.com</p>
               </div>
-              <div className={styles.contactItem}>
+              <div className="contactItem">
                 <h4>Telefone:</h4>
                 <p>+55 53 8150 1976</p>
               </div>
             </div>
-
-            <div className={styles.social}>
-              <h4>Redes sociais:</h4>
-              <div className={styles.socialLinks}>
-                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  Behance
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  Instagram
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                  LinkedIn
-                </a>
-              </div>
-            </div>
           </div>
 
-          <div className={`${styles.formContainer} animate-in animate-in-delay-1 glass-effect`}>
-            <form onSubmit={handleSubmit} className={styles.form}>
-              <div className={styles.formGroup}>
+          <div className="formContainer animate-in animate-in-delay-1 glass-effect">
+            <form onSubmit={handleSubmit} className="form">
+              <div className="formGroup">
                 <label htmlFor="name">Nome</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
               </div>
 
-              <div className={styles.formGroup}>
+              <div className="formGroup">
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
               </div>
 
-              <div className={styles.formGroup}>
+              <div className="formGroup">
                 <label htmlFor="message">Mensagem</label>
                 <textarea
                   id="message"
@@ -116,19 +100,17 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+              <button type="submit" className="submitBtn" disabled={isSubmitting}>
                 {isSubmitting ? (
                   "Enviando..."
                 ) : (
                   <>
-                    Enviar mensagem <Send size={16} className={styles.sendIcon} />
+                    Enviar mensagem <Send size={16} className="sendIcon" />
                   </>
                 )}
               </button>
 
-              {submitMessage && (
-                <div className={`${styles.submitMessage} ${styles[submitStatus]}`}>{submitMessage}</div>
-              )}
+              {submitMessage && <div className={`submitMessage ${submitStatus}`}>{submitMessage}</div>}
             </form>
           </div>
         </div>
