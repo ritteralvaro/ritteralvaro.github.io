@@ -1,43 +1,56 @@
+import Link from "next/link"
 import Image from "next/image"
+import { ArrowRight } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="hero-section">
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1 className="hero-title">
-            <span className="text-gradient">Cluster</span> Vagas
+    <section className="hero">
+      <div className="backgroundGradient"></div>
+      <div className="backgroundGrid"></div>
+
+      <div className="container">
+        <div className="content">
+          <h1 className="title animate-in">
+            Designer com ampla experiência em <span className="highlight">soluções personalizadas</span>
           </h1>
-          <div className="hero-subtitle">
-            <p>
-              O <span className="highlight">impacto</span> que a sua <span className="highlight-blue">carreira</span>{" "}
-              precisa.
-            </p>
-            <p>
-              O <span className="highlight">espaço</span> que o seu talento{" "}
-              <span className="highlight-blue">busca</span>.
-            </p>
-            <p>
-              A <span className="highlight">experiência</span> que o seu futuro{" "}
-              <span className="highlight-blue">pede</span>.
-            </p>
+          <p className="subtitle animate-in animate-in-delay-1">
+            Atuo em UX/UI, Growth Marketing e Design Gráfico, e lídero times e projetos que transformam ideias em
+            resultados concretos. Meu objetivo é ajudar marcas a se destacarem, com abordagens criativas que otimizam
+            processos e impulsionam vendas.
+          </p>
+          <div className="cta animate-in animate-in-delay-2">
+            <Link href="/#projetos" className="btn btn-primary">
+              Ver projetos <ArrowRight size={18} />
+            </Link>
+            <Link href="/#sobre" className="btn btn-outline">
+              Sobre mim
+            </Link>
           </div>
-          <a href="#vagas" className="cta-button large">
-            Ver vagas abertas
-          </a>
         </div>
-        <div className="hero-visual">
-          <div className="shape-circle"></div>
-          <div className="shape-lines"></div>
-          <div className="photo-grid">
-            <div className="photo photo-1">
-              <Image src="/placeholder.svg?height=300&width=300" alt="Membro da equipe" width={300} height={300} />
-            </div>
-            <div className="photo photo-2">
-              <Image src="/placeholder.svg?height=300&width=300" alt="Membro da equipe" width={300} height={300} />
-            </div>
-            <div className="photo photo-3">
-              <Image src="/placeholder.svg?height=300&width=300" alt="Membro da equipe" width={300} height={300} />
+        <div className="imageWrapper animate-in animate-in-delay-3">
+          <div className="imageContainer">
+            <div className="imageBorder"></div>
+            <Image
+              src="/alvaro.png"
+              alt="Alvaro Ritter"
+              width={600}
+              height={800}
+              className="image"
+              priority
+            />
+            <div className="stats">
+              <div className="stat stat1 animate-in animate-in-delay-4">
+                <span className="statValue">UX/UI</span>
+                <span className="statLabel">Design de interfaces</span>
+              </div>
+              <div className="stat stat2 animate-in animate-in-delay-5">
+                <span className="statValue">Growth</span>
+                <span className="statLabel">Marketing estratégico</span>
+              </div>
+              <div className="stat stat3 animate-in animate-in-delay-6">
+                <span className="statValue">Branding</span>
+                <span className="statLabel">Identidade visual</span>
+              </div>
             </div>
           </div>
         </div>
