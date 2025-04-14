@@ -1,17 +1,11 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
 import "./globals.css"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import FramerAnimations from "@/components/framer-animations"
-
-const inter = Inter({ subsets: ["latin"] })
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Alvaro Ritter - Design, Marketing & Growth",
-  description:
-    "Designer com ampla experiência em soluções personalizadas para UX/UI, Growth Marketing e Design Gráfico",
+  title: "Portal de Vagas - Cluster",
+  description: "Encontre as melhores oportunidades de trabalho na Cluster",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -21,12 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <FramerAnimations />
-      </body>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&family=Rawline:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   )
 }
+
+
+import './globals.css'

@@ -1,17 +1,26 @@
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import Portfolio from "@/components/portfolio"
-import Services from "@/components/services"
-import Contact from "@/components/contact"
+"use client"
 
-export default function Home() {
+import Header from "@/components/header"
+import Hero from "@/components/hero"
+import StepsSection from "@/components/steps-section"
+import BenefitsSection from "@/components/benefits-section"
+import JobsSection from "@/components/jobs-section"
+import ProcessSection from "@/components/process-section"
+import CTASection from "@/components/cta-section"
+import Footer from "@/components/footer"
+
+export default function JobsPage() {
   return (
-    <>
+    <div className="main-container">
+      <div className="grid-background"></div>
+      <Header />
       <Hero />
-      <Services />
-      <Portfolio />
-      <About />
-      <Contact />
-    </>
+      <StepsSection />
+      <BenefitsSection />
+      <JobsSection />
+      <ProcessSection />
+      <CTASection />
+      <Footer />
+    </div>
   )
 }
