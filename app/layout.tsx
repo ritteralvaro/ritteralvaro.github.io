@@ -17,13 +17,7 @@ export const metadata: Metadata = {
   // Adicione a meta tag aqui
   other: {
     'everleads-secret': 'eyJpdiI6Ik4zTytGR3FGdkpjVDU1dnU0dmhReXc9PSIsInZhbHVlIjoiOXp4eEJacE1XQXMydmZqdGJaUk5KZz09IiwibWFjIjoiZDRhNDUxZWNhNDlmOWJkZjcwNWM5MGJhZTBmOWY3YTllZjZhZGM4YzJlYzkxNzJmNTdmODQyYjZlYjlmMWVhYSIsInRhZyI6IiJ9'
-  }
-    "Designer com ampla experiência em soluções personalizadas para UX/UI, Growth Marketing e Design",
-  // Adicione a meta tag aqui
-  other: {
-    'everleads-secret': 'eyJpdiI6InZ2NTBmTDh0Rm8vKzdsbnFhM1dlRGc9PSIsInZhbHVlIjoiZ2pVa3NzTEh5Ynhqd0NzNzB4K3hHdz09IiwibWFjIjoiZDk1NGEzMzgwNzg3N2RhZjU1MDY4OGE2OWVlY2E2ZDg1ZTFlZjhmMGZiMzBjNDQ5YjI5YzNhYzliYTQ4MzhmMCIsInRhZyI6IiJ9'
-  }
-}
+  }}
 
 export default function RootLayout({
   children,
@@ -49,3 +43,6 @@ export default function RootLayout({
     </html>
   )
 }
+
+
+// Não posso dar merge com git ammend
