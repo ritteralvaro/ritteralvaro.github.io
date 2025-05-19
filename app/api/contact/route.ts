@@ -18,7 +18,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error('Erro no processamento da solicitação:', error);
     return NextResponse.json(
-      { success: false, message: 'Erro ao processar a solicitação' },
+      { success: false, message: `Erro ao processar a solicitação: ${error instanceof Error ? error.message : String(error)}` },
       { status: 500 }
     );
   }
