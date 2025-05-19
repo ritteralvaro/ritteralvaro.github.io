@@ -6,7 +6,6 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import FramerAnimations from "@/components/framer-animations"
 import Script from 'next/script'
-import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -43,6 +42,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-// Não posso dar merge com git ammend
