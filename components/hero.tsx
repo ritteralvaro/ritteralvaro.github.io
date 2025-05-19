@@ -29,7 +29,6 @@ export default function Hero() {
         </div>
         <div className="imageWrapper animate-in animate-in-delay-3">
           <div className="imageContainer">
-            <div className="imageBorder"></div>
             <Image
               src="/alvaro.png"
               alt="Alvaro Ritter"

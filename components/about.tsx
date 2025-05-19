@@ -12,7 +12,7 @@ export default function About() {
           <div className="imageContainer animate-in">
             <div className="imageBorder"></div>
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="/alvaro premio.jpg"
               alt="Alvaro Ritter"
               width={500}
               height={500}
