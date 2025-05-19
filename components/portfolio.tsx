@@ -1,4 +1,5 @@
 "use client"
+
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -12,8 +13,6 @@ const portfolioItems = [
     subtitle: "Coworking em Pelotas - RS",
     image: "/coworking.png",
     link: "https://coworkingnucleo.com.br",
-    image: "/coworking.png",
-    link: "https://coworkingnucleo.com.br",
   },
   {
     id: 2,
@@ -21,15 +20,11 @@ const portfolioItems = [
     subtitle: "Campanha Leads Automotivo",
     image: "/repasses.png",
     link: "https://repasses.nissulgalaseminovos.com.br",
-    image: "/repasses.png",
-    link: "https://repasses.nissulgalaseminovos.com.br",
   },
   {
     id: 3,
     title: "Landing Page",
     subtitle: "Startup Área Médica",
-    image: "/protocolo.png",
-    link: "https://www.protocolodoc.com.br",
     image: "/protocolo.png",
     link: "https://www.protocolodoc.com.br",
   },
@@ -45,7 +40,7 @@ const portfolioItems = [
     title: "Embalagem",
     subtitle: "Monster Energy — Monster High Edition",
     image: "/monster.webp",
-    link: "https://www.behance.net/gallery/190837585/Identidade-Visual-de-Evento-Academico-55-SEMAC",
+    link: "https://www.behance.net/gallery/191023313/Monster-Energy-Monster-High-Edition",
   },
   {
     id: 6,
@@ -53,22 +48,10 @@ const portfolioItems = [
     subtitle: "Foco em campanha para setor jurídico",
     image: "/decorando.png",
     link: "https://paginas.decorandoaleiseca.com.br/ilimitada",
-    subtitle: "Foco em campanha para setor jurídico",
-    image: "/decorando.png",
-    link: "https://paginas.decorandoaleiseca.com.br/ilimitada",
   },
 ]
 
 export default function Portfolio() {
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null)
-  
-  const handleMouseEnter = (id: number) => {
-    setHoveredItem(id)
-  }
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null)
-  }
   const [hoveredItem, setHoveredItem] = useState<number | null>(null)
   
   const handleMouseEnter = (id: number) => {
@@ -96,13 +79,9 @@ export default function Portfolio() {
 
         <div className="grid">
           {portfolioItems.map((item, index) => (
-          {portfolioItems.map((item, index) => (
             <div
               key={item.id}
               className={`item animate-in animate-in-delay-${(index % 3) + 2}`}
-              onMouseEnter={() => handleMouseEnter(item.id)}
-              onMouseLeave={handleMouseLeave}
-              style={{ cursor: 'pointer' }}
               onMouseEnter={() => handleMouseEnter(item.id)}
               onMouseLeave={handleMouseLeave}
               style={{ cursor: 'pointer' }}
@@ -130,12 +109,6 @@ export default function Portfolio() {
         </div>
 
         <div className="cta animate-in animate-in-delay-5">
-          <Link
-            className="btn btn-outline"
-            href="https://www.behance.net/ritteralvaro" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
           <Link
             className="btn btn-outline"
             href="https://www.behance.net/ritteralvaro" 
