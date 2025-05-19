@@ -43,6 +43,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-// Não posso dar merge com git ammend
