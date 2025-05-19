@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="backgroundGradient"></div>
       <div className="backgroundGrid"></div>
 
-      <div className="container">
+      <div className="container invertido">
         <div className="content">
           <h1 className="title animate-in">
             Designer com ampla experiência em <span className="highlight">soluções personalizadas</span>
@@ -29,26 +29,23 @@ export default function Hero() {
         </div>
         <div className="imageWrapper animate-in animate-in-delay-3">
           <div className="imageContainer">
-            <Image
+            <img
               src="/alvaro.png"
               alt="Alvaro Ritter"
-              width={600}
-              height={800}
               className="image"
-              priority
             />
             <div className="stats">
               <div className="stat stat1 animate-in animate-in-delay-4">
                 <span className="statValue">UX/UI</span>
-                <span className="statLabel">Design de interfaces</span>
+                <span className="statLabel">Design e Experiência</span>
               </div>
               <div className="stat stat2 animate-in animate-in-delay-5">
                 <span className="statValue">Growth</span>
-                <span className="statLabel">Marketing estratégico</span>
+                <span className="statLabel">Crescimento Estratégico</span>
               </div>
               <div className="stat stat3 animate-in animate-in-delay-6">
                 <span className="statValue">Branding</span>
-                <span className="statLabel">Identidade visual</span>
+                <span className="statLabel">Identidade e Comunicação</span>
               </div>
             </div>
           </div>

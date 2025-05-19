@@ -11,7 +11,7 @@ export default function About() {
         <div className="content">
           <div className="imageContainer animate-in">
             <div className="imageBorder"></div>
-            <Image
+            <img
               src="/alvaro premio.jpg"
               alt="Alvaro Ritter"
               width={500}

@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="glow"></div>
       <div className="container">
         <div className="content">
-          <div className="logo">
+          <a href="/" className="logo">
             <img src="/logo.svg" width="150" height="40"></img>
-          </div>
+          </a>
 
           <div className="social">
             <a href="https://github.com/ritteralvaro" target="_blank" rel="noopener noreferrer" className="socialIcon">
