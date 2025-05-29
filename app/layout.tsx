@@ -1,5 +1,3 @@
-'use client'
-
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -8,7 +6,6 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import FramerAnimations from "@/components/framer-animations"
 import Script from 'next/script'
-import { useEffect } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,20 +20,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-      useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://everleads.clusterlabs.com.br/lib/everleads.js';
-        script.async = true;
-        script.onload = () => {
-            window.EverLeads.init()
-        };
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script); // limpa ao desmontar o componente
-        };
-    }, []);
 
   return (
     <html lang="pt-BR">
